@@ -4,7 +4,7 @@
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
 import { HomeOutlined } from '@ant-design/icons'
-import ProLayout from '@ant-design/pro-layout'
+import ProLayoutA from '@ant-design/pro-layout'
 import { history, Link, useLocation } from '@vitjs/runtime'
 
 import GlobalFooter from '@/containers/GlobalFooter'
@@ -21,8 +21,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const location = useLocation()
 
   return (
-    <ProLayout
-      logo='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
+    <ProLayoutA
       {...props}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {

@@ -1,9 +1,8 @@
 {
-  "name": "vite-react",
+  "name": "admin-meal-service",
   "version": "1.0.0",
   "author": {
-    "name": "云深",
-    "email": "yuns.xie@qq.com"
+    "name": "vishal acharya"
   },
   "scripts": {
     "dev": "cross-env BROWSER=chrome vite --host",

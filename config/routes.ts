@@ -16,8 +16,8 @@ export default [
               },
               {
                 path: '/welcome',
-                icon: 'smile',
-                name: '欢迎页',
+                icon: 'BarChartOutlined',
+                name: 'Dashboard',
                 component: './pages/Welcome',
               },
               {
