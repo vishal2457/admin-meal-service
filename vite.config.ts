@@ -1,7 +1,6 @@
 // import * as path from 'path';
 import react from '@vitejs/plugin-react'
 import vitApp from '@vitjs/vit'
-import { getThemeVariables } from 'antd/dist/theme'
 import { visualizer } from 'rollup-plugin-visualizer'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
@@ -74,10 +73,10 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         // modifyVars: { 'primary-color': '#13c2c2' },
-        modifyVars: getThemeVariables({
-          // dark: true, // 开启暗黑模式
-          // compact: true, // 开启紧凑模式
-        }),
+        // modifyVars: getThemeVariables({
+        //   // dark: true, // 开启暗黑模式
+        //   // compact: true, // 开启紧凑模式
+        // }),
         javascriptEnabled: true,
       },
     },

@@ -1,5 +1,4 @@
 import { UserOutlined } from '@ant-design/icons'
-import { PageContainer } from '@ant-design/pro-layout'
 import {
   Typography,
   Table,
@@ -7,7 +6,6 @@ import {
   Button,
   Space,
   Divider,
-  PageHeader,
   Menu,
   Dropdown,
   Steps,
@@ -118,198 +116,191 @@ export default function AndDesign() {
   }
 
   return (
-    <PageContainer>
-      <Card>
-        <Typography.Title level={4}>Button</Typography.Title>
-        <Space>
-          <Button type='primary'>Hello</Button>
-          <Button>World</Button>
-        </Space>
-        <Divider />
+    <Card>
+      <Typography.Title level={4}>Button</Typography.Title>
+      <Space>
+        <Button type='primary'>Hello</Button>
+        <Button>World</Button>
+      </Space>
+      <Divider />
 
-        <Typography.Title level={4}>Dropdown</Typography.Title>
-        <Space>
-          <Dropdown
-            overlay={menu}
-            placement='bottomLeft'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>bottomLeft</Button>
-          </Dropdown>
-          <Dropdown
-            overlay={menu}
-            placement='bottom'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>bottom</Button>
-          </Dropdown>
-          <Dropdown
-            overlay={menu}
-            placement='bottomRight'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>bottomRight</Button>
-          </Dropdown>
-          <br />
-          <Dropdown
-            overlay={menu}
-            placement='topLeft'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>topLeft</Button>
-          </Dropdown>
-          <Dropdown
-            overlay={menu}
-            placement='top'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>top</Button>
-          </Dropdown>
-          <Dropdown
-            overlay={menu}
-            placement='topRight'
-            arrow={{ pointAtCenter: true }}
-          >
-            <Button>topRight</Button>
-          </Dropdown>
-        </Space>
-        <Divider />
-
-        <Typography.Title level={4}>PageHeader</Typography.Title>
-        <PageHeader
-          className='site-page-header'
-          onBack={() => null}
-          title='Title'
-          subTitle='This is a subtitle'
-        />
-        <Divider />
-        <Typography.Title level={4}>Steps</Typography.Title>
-        <Steps current={1}>
-          <Steps.Step title='Finished' description='This is a description.' />
-          <Steps.Step
-            title='In Progress'
-            subTitle='Left 00:00:08'
-            description='This is a description.'
-          />
-          <Steps.Step title='Waiting' description='This is a description.' />
-        </Steps>
-        <Divider />
-
-        <Typography.Title level={4}>Cascader</Typography.Title>
-        <Cascader
-          options={options}
-          onChange={onChange}
-          placeholder='Please select'
-        />
-        <Divider />
-
-        <Typography.Title level={4}>Rate</Typography.Title>
-        <Rate />
-        <Divider />
-
-        <Typography.Title level={4}>Avatar</Typography.Title>
-        <Space>
-          <Avatar size={64} icon={<UserOutlined />} />
-          <Avatar size='large' icon={<UserOutlined />} />
-          <Avatar icon={<UserOutlined />} />
-          <Avatar size='small' icon={<UserOutlined />} />
-        </Space>
+      <Typography.Title level={4}>Dropdown</Typography.Title>
+      <Space>
+        <Dropdown
+          overlay={menu}
+          placement='bottomLeft'
+          arrow={{ pointAtCenter: true }}
+        >
+          <Button>bottomLeft</Button>
+        </Dropdown>
+        <Dropdown
+          overlay={menu}
+          placement='bottom'
+          arrow={{ pointAtCenter: true }}
+        >
+          <Button>bottom</Button>
+        </Dropdown>
+        <Dropdown
+          overlay={menu}
+          placement='bottomRight'
+          arrow={{ pointAtCenter: true }}
+        >
+          <Button>bottomRight</Button>
+        </Dropdown>
         <br />
-        <Space>
-          <Avatar shape='square' size={64} icon={<UserOutlined />} />
-          <Avatar shape='square' size='large' icon={<UserOutlined />} />
-          <Avatar shape='square' icon={<UserOutlined />} />
-          <Avatar shape='square' size='small' icon={<UserOutlined />} />
-        </Space>
-        <Divider />
-
-        <Typography.Title level={4}>Carousel</Typography.Title>
-        <Carousel afterChange={onChange}>
-          <div>
-            <h3 style={contentStyle}>1</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>2</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>3</h3>
-          </div>
-          <div>
-            <h3 style={contentStyle}>4</h3>
-          </div>
-        </Carousel>
-        <Divider />
-
-        <Typography.Title level={4}>Collapse</Typography.Title>
-        <Collapse defaultActiveKey={['1']} onChange={onChange}>
-          <Collapse.Panel header='This is panel header 1' key='1'>
-            <p>{text}</p>
-          </Collapse.Panel>
-          <Collapse.Panel header='This is panel header 2' key='2'>
-            <p>{text}</p>
-          </Collapse.Panel>
-          <Collapse.Panel header='This is panel header 3' key='3'>
-            <p>{text}</p>
-          </Collapse.Panel>
-        </Collapse>
-        <Divider />
-
-        <Typography.Title level={4}>Table</Typography.Title>
-        <Table pagination={{ total: 100, pageSize: 10 }} />
-        <Divider />
-
-        <Typography.Title level={4}>Drawer</Typography.Title>
-        <Button type='primary' onClick={showDrawer}>
-          Open
-        </Button>
-        <Drawer
-          title='Basic Drawer'
-          placement='right'
-          onClose={onClose}
-          visible={visible}
+        <Dropdown
+          overlay={menu}
+          placement='topLeft'
+          arrow={{ pointAtCenter: true }}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Drawer>
-        <Divider />
-
-        <Typography.Title level={4}>Message</Typography.Title>
-        <Button
-          type='primary'
-          onClick={() => {
-            message.info('This is a normal message')
-          }}
+          <Button>topLeft</Button>
+        </Dropdown>
+        <Dropdown
+          overlay={menu}
+          placement='top'
+          arrow={{ pointAtCenter: true }}
         >
-          Display normal message
-        </Button>
-        <Divider />
-
-        <Typography.Title level={4}>Notification</Typography.Title>
-        <Button
-          type='primary'
-          onClick={() => {
-            notification.open({
-              message: 'Notification Title',
-              description:
-                'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-              onClick: () => {
-                console.log('Notification Clicked!')
-              },
-            })
-          }}
+          <Button>top</Button>
+        </Dropdown>
+        <Dropdown
+          overlay={menu}
+          placement='topRight'
+          arrow={{ pointAtCenter: true }}
         >
-          Open the notification box
-        </Button>
-        <Divider />
+          <Button>topRight</Button>
+        </Dropdown>
+      </Space>
+      <Divider />
 
-        <Typography.Title level={4}>Skeleton</Typography.Title>
-        <Skeleton active />
-        <Divider />
+      <Typography.Title level={4}>PageHeader</Typography.Title>
 
-        <Typography.Title level={4}>Spin</Typography.Title>
-        <Spin />
-      </Card>
-    </PageContainer>
+      <Divider />
+      <Typography.Title level={4}>Steps</Typography.Title>
+      <Steps current={1}>
+        <Steps.Step title='Finished' description='This is a description.' />
+        <Steps.Step
+          title='In Progress'
+          subTitle='Left 00:00:08'
+          description='This is a description.'
+        />
+        <Steps.Step title='Waiting' description='This is a description.' />
+      </Steps>
+      <Divider />
+
+      <Typography.Title level={4}>Cascader</Typography.Title>
+      <Cascader
+        options={options}
+        onChange={onChange}
+        placeholder='Please select'
+      />
+      <Divider />
+
+      <Typography.Title level={4}>Rate</Typography.Title>
+      <Rate />
+      <Divider />
+
+      <Typography.Title level={4}>Avatar</Typography.Title>
+      <Space>
+        <Avatar size={64} icon={<UserOutlined />} />
+        <Avatar size='large' icon={<UserOutlined />} />
+        <Avatar icon={<UserOutlined />} />
+        <Avatar size='small' icon={<UserOutlined />} />
+      </Space>
+      <br />
+      <Space>
+        <Avatar shape='square' size={64} icon={<UserOutlined />} />
+        <Avatar shape='square' size='large' icon={<UserOutlined />} />
+        <Avatar shape='square' icon={<UserOutlined />} />
+        <Avatar shape='square' size='small' icon={<UserOutlined />} />
+      </Space>
+      <Divider />
+
+      <Typography.Title level={4}>Carousel</Typography.Title>
+      <Carousel afterChange={onChange}>
+        <div>
+          <h3 style={contentStyle}>1</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>2</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>3</h3>
+        </div>
+        <div>
+          <h3 style={contentStyle}>4</h3>
+        </div>
+      </Carousel>
+      <Divider />
+
+      <Typography.Title level={4}>Collapse</Typography.Title>
+      <Collapse defaultActiveKey={['1']} onChange={onChange}>
+        <Collapse.Panel header='This is panel header 1' key='1'>
+          <p>{text}</p>
+        </Collapse.Panel>
+        <Collapse.Panel header='This is panel header 2' key='2'>
+          <p>{text}</p>
+        </Collapse.Panel>
+        <Collapse.Panel header='This is panel header 3' key='3'>
+          <p>{text}</p>
+        </Collapse.Panel>
+      </Collapse>
+      <Divider />
+
+      <Typography.Title level={4}>Table</Typography.Title>
+      <Table pagination={{ total: 100, pageSize: 10 }} />
+      <Divider />
+
+      <Typography.Title level={4}>Drawer</Typography.Title>
+      <Button type='primary' onClick={showDrawer}>
+        Open
+      </Button>
+      <Drawer
+        title='Basic Drawer'
+        placement='right'
+        onClose={onClose}
+        visible={visible}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+      <Divider />
+
+      <Typography.Title level={4}>Message</Typography.Title>
+      <Button
+        type='primary'
+        onClick={() => {
+          message.info('This is a normal message')
+        }}
+      >
+        Display normal message
+      </Button>
+      <Divider />
+
+      <Typography.Title level={4}>Notification</Typography.Title>
+      <Button
+        type='primary'
+        onClick={() => {
+          notification.open({
+            message: 'Notification Title',
+            description:
+              'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+            onClick: () => {
+              console.log('Notification Clicked!')
+            },
+          })
+        }}
+      >
+        Open the notification box
+      </Button>
+      <Divider />
+
+      <Typography.Title level={4}>Skeleton</Typography.Title>
+      <Skeleton active />
+      <Divider />
+
+      <Typography.Title level={4}>Spin</Typography.Title>
+      <Spin />
+    </Card>
   )
 }

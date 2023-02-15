@@ -1,61 +1,46 @@
-/**
- * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout.
- *
- * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
- */
-import { HomeOutlined } from '@ant-design/icons'
-import ProLayoutA from '@ant-design/pro-layout'
-import { history, Link, useLocation } from '@vitjs/runtime'
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from '@ant-design/icons'
+import { Layout, Menu } from 'antd'
 
-import GlobalFooter from '@/containers/GlobalFooter'
-
-import defaultSettings from '../../config/defaultSettings'
-
-import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout'
-
-export type BasicLayoutProps = {
-  route: ProLayoutProps['route']
-} & ProLayoutProps
-
-const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
-  const location = useLocation()
-
+const BasicLayout = () => {
   return (
-    <ProLayoutA
-      {...props}
-      onMenuHeaderClick={() => history.push('/')}
-      menuItemRender={(menuItemProps, defaultDom) => {
-        if (
-          menuItemProps.isUrl ||
-          !menuItemProps.path ||
-          location.pathname === menuItemProps.path
-        ) {
-          return defaultDom
-        }
-        return <Link to={menuItemProps.path}>{defaultDom}</Link>
-      }}
-      breadcrumbRender={(routers = []) => [
-        {
-          path: '/',
-          breadcrumbName: (<HomeOutlined />) as any,
-        },
-        ...routers,
-      ]}
-      itemRender={(route, params, routes, paths) => {
-        const first = routes.indexOf(route) === 0
-        return first ? (
-          <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-        ) : (
-          <span>{route.breadcrumbName}</span>
-        )
-      }}
-      footerRender={() => <GlobalFooter />}
-      // waterMarkProps={{
-      //   content: 'Vite React',
-      //   fontColor: 'rgba(24,144,255,0.15)',
-      // }}
-      {...defaultSettings}
-    />
+    <Layout style={{ minHeight: '100vh' }}>
+      <Layout.Sider trigger={null} collapsible>
+        <div className='logo' />
+        <Menu
+          mode='inline'
+          defaultSelectedKeys={['1']}
+          items={[
+            {
+              key: '1',
+              icon: <UserOutlined />,
+              label: 'nav 1',
+            },
+            {
+              key: '2',
+              icon: <VideoCameraOutlined />,
+              label: 'nav 2',
+            },
+            {
+              key: '3',
+              icon: <UploadOutlined />,
+              label: 'nav 3',
+            },
+          ]}
+        />
+      </Layout.Sider>
+      <Layout>
+        <Layout.Content style={{ margin: '24px 16px 0' }}>
+          <div>content</div>
+        </Layout.Content>
+        <Layout.Footer style={{ textAlign: 'center' }}>
+          Meal service
+        </Layout.Footer>
+      </Layout>
+    </Layout>
   )
 }
 

@@ -12,13 +12,7 @@ export default [
             routes: [
               {
                 path: '/',
-                redirect: '/welcome',
-              },
-              {
-                path: '/welcome',
-                icon: 'BarChartOutlined',
-                name: 'Dashboard',
-                component: './pages/Welcome',
+                redirect: '/ant-design',
               },
               {
                 path: '/ant-design',
