@@ -37,12 +37,7 @@ export default defineConfig({
       ],
     }),
     vitePluginImp({
-      libList: [
-        {
-          libName: 'antd',
-          style: (name) => `antd/es/${name}/style`,
-        },
-      ],
+      libList: [],
     }),
     vitApp({
       routes,

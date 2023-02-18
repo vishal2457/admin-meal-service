@@ -12,13 +12,19 @@ export default [
             routes: [
               {
                 path: '/',
-                redirect: '/ant-design',
+                redirect: '/add-meal',
               },
               {
                 path: '/ant-design',
                 icon: 'star',
                 name: 'Ant Design',
                 component: './pages/AntDesign',
+              },
+              {
+                path: '/add-meal',
+                icon: 'star',
+                name: 'Add Meal',
+                component: './pages/meal/add-meal.page',
               },
             ],
           },
